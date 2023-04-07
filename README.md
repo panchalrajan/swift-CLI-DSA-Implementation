@@ -1,3 +1,3 @@
 # DSA
 
-A description of this package.
+Index.html contains some commands which can be used in this code
