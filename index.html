@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Copy Strings</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        text-align: center;
+        margin: 0;
+        padding: 0;
+      }
+
+      h1 {
+        margin-top: 50px;
+      }
+
+      .container {
+        margin-top: 50px;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+
+      input[type="text"] {
+        width: 400px;
+        padding: 10px;
+        font-size: 16px;
+        border: none;
+        border-radius: 5px;
+        background-color: #f5f5f5;
+        margin-right: 10px;
+        margin-bottom: 10px;
+        display: inline-block;
+        vertical-align: middle;
+        -webkit-user-select: all;
+        -moz-user-select: all;
+        -ms-user-select: all;
+        user-select: all;
+      }
+
+      button {
+        padding: 10px;
+        font-size: 16px;
+        border: none;
+        border-radius: 5px;
+        background-color: #4caf50;
+        color: #fff;
+        cursor: pointer;
+        vertical-align: middle;
+        margin-bottom: 10px;
+      }
+
+      button:hover {
+        background-color: #3e8e41;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Copy Strings</h1>
+    <div class="container" id="input-container"></div>
+
+    <script>
+      // Array of strings
+      const strings = [
+        "swift run DSA --linked-list --size",
+        "swift run DSA --linked-list --middle",
+        "swift run DSA --linked-list --normal-order 1 2 3 4 5",
+        "swift run DSA --linked-list --normal-order 6",
+        "swift run DSA --linked-list --reverse-order 0",
+        "swift run DSA --linked-list --size",
+        "swift run DSA --linked-list --middle",
+        "swift run DSA --stack --size",
+        "swift run DSA --stack --is-empty",
+        "swift run DSA --stack --push 1 2 3 4 5",
+        "swift run DSA --stack --push 6",
+        "swift run DSA --stack --peek",
+        "swift run DSA --stack --pop",
+        "swift run DSA --stack --size",
+        "swift run DSA --queue --size",
+        "swift run DSA --queue --is-empty",
+        "swift run DSA --queue --add 1 2 3 4 5",
+        "swift run DSA --queue --add 6",
+        "swift run DSA --queue --peek",
+        "swift run DSA --queue --poll",
+        "swift run DSA --queue --size",
+      ];
+
+      // Get the input container
+      const inputContainer = document.getElementById("input-container");
+
+      // Create an input field for each string in the array
+      for (let i = 0; i < strings.length; i++) {
+        const inputField = document.createElement("input");
+        inputField.type = "text";
+        inputField.value = strings[i];
+        inputField.readOnly = true;
+        inputContainer.appendChild(inputField);
+
+        const copyButton = document.createElement("button");
+        copyButton.innerHTML = "Copy";
+        copyButton.addEventListener("click", function () {
+          inputField.select();
+          document.execCommand("copy");
+        //   alert("Copied to clipboard!");
+        });
+        inputContainer.appendChild(copyButton);
+      }
+    </script>
+  </body>
+</html>
